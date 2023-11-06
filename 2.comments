@@ -1,0 +1,4 @@
+Shell Scripting Comments:
+------------------------
+Any line starting with a hash (#) becomes comment. Comment means, that line will not take part in script execution. 
+It will not show up in the output.

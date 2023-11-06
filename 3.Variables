@@ -1,0 +1,91 @@
+What are the different types of variables used in Shell Script?
+---------------------------------------------------------------
+System defined variable : 
+system defined variable created by os itself. These variables are generally defined in capital letters.
+ It can be viewed by the “set” command.
+
+User defined variable : 
+it created by system users. Value of variable can be view by using “echo $variablename” command.
+--------------------------------------------------------------------------------------------------
+What are Shell Variables?
+------------------------
+Variables store data in the form of characters and numbers.
+ Similarly, Shell variables are used to store information and they can by the shell only.
+
+For example, the following creates a shell variable and then prints it:
+variable ="Hello"
+echo $variable
+
+Below is a small script which will use a variable.
+#!/bin/sh
+echo "what is your name?"
+read name
+echo "How do you do, $name?"
+read remark
+echo "I am $remark too!"
+Note : We can assign the output of a command to a variable too Example: LIST=$(ls) , another example: SERVER_NAME=$(hostname)
+
+Some Valid Variable Names:
+THIS3VARIABLE=”ABC”
+THIS_IS_VARIABLE=”ABC”
+thisIsVariable=”ABC”
+
+Some Invalid Variable Names:
+4Number=”NUM”
+This-Is-Var=”VAR”
+# No special character apart from underscore is allowed!
+-----------------------------------------------------------------------------------------------------------------------
+Read-only Variables:
+-------------------
+Shell provides a way to mark variables as read-only by using the read-only command.
+After a variable is marked read-only, its value cannot be changed.
+
+For example, the following script generates an error while trying to change the value of NAME −
+#!/bin/sh
+NAME="Vimal Daga"
+readonly NAME
+NAME="Preeti Daga"
+
+The above script will generate the following result − /bin/sh: NAME: This variable is read only.
+-----------------------------------------------------------------------------------------------
+Unsetting Variables:
+--------------------
+Unsetting or deleting a variable directs the shell to remove the variable from the list of variables that it tracks.
+Once you unset a variable, you cannot access the stored value in the variable.
+
+Following is the syntax to unset a defined variable using the unset command
+unset variable_name
+
+The above command unsets the value of a defined variable. Here is a simple example that demonstrates how the command works −
+#!/bin/sh
+NAME="VD"
+unset NAME
+echo $NAME
+--------------------------------------------------------------------------------------------------------
+Special variables:
+
+The $ character represents the process ID number, or PID, of the current shell
+$echo $$
+
+The above command writes the PID of the current shell.
+
+$0 : The filename of the current script.
+$n : These variables correspond to the arguments with which a script was invoked.
+      Here n is a positive decimal number corresponding to the position of an argument (the first argument is $1, the second argument is $2, and so on).
+$# : The number of arguments supplied to a script.
+$* : All the arguments are double quoted. If a script receives two arguments, $* is equivalent to $1 $2.
+$@ : All the arguments are individually double quoted. If a script receives two arguments, $@ is equivalent to $1 $2.
+$? : The exit status of the last command executed.
+$$ : The process number of the current shell. For shell scripts, this is the process ID under which they are executing.
+$! : The process number of the last background command.
+---------------------------------------------------------------------------------------------------------------------------
+User Input:
+read command accepts STDIN (Standard Input)
+
+read -p "PROMPT MESSAGE" VARIABLE
+Here, “Prompt Message” will be prompted to the screen and whatever user enters next will be stored in VARIABLE
+
+#!/bin/bash
+read -p "Please Enter You Name: " NAME
+echo "Your Name Is: $NAME"
+----------------------------------------------------------------------------------------------------------------------------
