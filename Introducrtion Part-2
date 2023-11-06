@@ -1,0 +1,38 @@
+How to create multiple text files and directories?
+
+To create multiple text file touch file name {} command is used
+Ex. suppose we want create 4 files then we type #touch filename{1..4}
+
+To create multiple directory mkdir filename {} command is used
+Ex. suppose we want to create 4 directory then we type mkdir filename {1..4}
+-------------------------------------------------------------------------------
+What is the use of head and tail command?
+
+Head command is used for display started first 10 lines
+Tail command is used for display started last 10 lines
+---------------------------------------------------------
+How to find the current shell which you are using?
+$echo $SHELL command is used for find current shell.
+------------------------------------------------------
+How to find an available shell in your system?
+Cat /etc/shells command is used to find available shells in your system.
+----------------------------------------------------------------------------
+How will you pass and access arguments to a script in Linux?
+
+For pass arguments in script “scriptname arg1 arg2 arg3 …”
+For access arguments in script can be accessed inside the script as “$1 , $2 .. $n”
+---------------------------------------------------------------------------------------
+What is the significance of $#?
+It represents the total number of arguments passed by string.
+---------------------------------------------------------------------------------------------
+What is the difference between $* and $@?
+$* consider the entire set of positional parameters as a single string but $@ treat each quoted argument as a separate argument.
+---------------------------------------------------------------------------------------------------------------------------------
+What are the different types of variables used in Shell Script?
+System defined variable : system defined variable created by os itself. These variables are generally defined in capital letters. It can be viewed by the “set” command.
+User defined variable : it created by system users. Value of variable can be view by using “echo $variablename” command.
+---------------------------------------------------------------------------------------------------------------------------
+What is the difference between = and ==?
+= use for assign value to variable
+== use for string comparison
+-------------------------------------------------------------------------------------------------------
