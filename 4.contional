@@ -1,0 +1,58 @@
+Condtional Statements:
+----------------------
+
+* simpleIF Statement:
+  If condition is True it wil execute only True condition.
+
+ syntax:
+ if [ condition-is-true ]
+ then
+   command 1
+   command 2
+     ...
+     ...
+   command N
+ fi
+-----------------------------------------------------------------------------
+* If-else statement:
+  The if then else condition loop states that if condition meets, output goes to if part otherwise it goes to else part.
+  The word fi represents if loop termination .
+
+  Syntax:
+  if [ condition-is-true ]
+  then
+     command 1
+  else
+      command 2
+  fi
+-------------------------------------------------------------------------------------------------------------
+* elif statement:
+if [ condition-is-true ]
+then
+  command 1
+elif [ condition-is-true ]
+then
+  command 2
+elif [ condition-is-true ]
+then
+  command 3
+else
+  command 4
+fi
+-----------------------------------------------------------------------------------------------------------------------
+case statement:
+The case statements are an alternative for if statements which are a little easier to read than complex if elif ladder.
+If you find yourself using an if statement to compare the same variable against some different/discrete values, you can use a case statements instead of if-elif ladder.
+Syntax:
+
+case "$VAR" in
+  pattern_1)
+    # commands when $VAR matches pattern 1
+    ;;
+  pattern_2)
+    # commands when $VAR matches pattern 2
+    ;;
+  *)
+    # This will run if $VAR doesnt match any of the given patterns
+    ;;
+esac
