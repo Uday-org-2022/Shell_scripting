@@ -1,0 +1,132 @@
+There are 5 basic operators in bash/shell scripting:
+* Arithmetic operators
+* Relational operators
+* Boolean operators
+* String Operators
+* Bitwise Operators
+* File Test operators
+
+ARTHIMETIC OPERARATOR:
+---------------------
+These operators are used to perform arthimetic/mathematical operations. These are 7 mathematical operators.
+* Addition(+): Binary operation used to add two operands - Ex: expr $a + $b
+* Subsctraction(-) : Binary operation used to substract two perands - Ex: expr $a - $b
+* Multiplication(*) : Binary operation used to multiply two operands - Ex: expr $a \* $b
+* Division(/) : Binary operation used to divide two operands - Ex: expr $b / $a
+* Modulus(%) : Binary operation used to find remainder of two operands - Ex: expr $b % $a
+* Increment Operator (++): Unary operator used to increase the value of operand by one.
+* Decrement Operator (- -): Unary operator used to decrease the value of a operand by one
+---------------------------------------------------------------------------------------------------------------------------------------
+Relational Operators:
+---------------------
+Relational Operators are those operators which define the relation between two operands.
+They give either true of false depending upon the relation. They are six types.
+
+* '==' operator: Double equal to operator compares the two operands. It returns true is they are equal to otherwise returns false.
+* '!=' operator: Not equal to operaror return true if the two operands are not equal otherwise it returns false.
+* '<' operator: Less then operator returns true if first operand is less than second operand otherwise returns false.
+* '<=' operator: Less than or equal operator returns true if first operand is less than or equal to second operand otherwise returns false.
+* '>' operator: Greater than operator return true if the first operand is greter than the second operand otherwise return false.
+* '>=' operator: Greater than or equal to operator eturns true if first operand is greater than or equal to second operand otherwise returns false.
+----------------------------------------------------------------------------------------------------------------------------------------
+Logical Operator:
+------------------
+They are also known as boolean operators. These are used to perform logical operations. They are 3 types.
+
+* Logical AND(&&):
+  This is a binary operator, which returns true if both the operands are true otherwise returns false.
+
+* Logical OR(||):
+  This is a binary operato, which returns false if both the operands are true otherwise returns true.
+
+* Not Equal to(!) : 
+  This is a unary operator which returns true if the operand is false and returns false if the operand is true.
+------------------------------------------------------------------------------------------------------------------------------------
+Bitwise operator:
+----------------
+A  bitwise operator is an operator which is used to perform bitwise operations on bit patterns.
+It converts the operands into binary data and then perform necessary operations bit by bit.
+Bitwise operators are of 6 types,
+
+* Bitwise AND(&):
+  A Bitwise AND operator performs binary AND operation bit by bit on the operands.
+  It converts the given input to binary digit and then perform AND operation bit by bit.
+  Finally it returns the decimal value.
+
+* Bitwise OR(|):
+  Bitwise | operator performs binary OR operation bit by bit on the operands.
+  It converts the given input to binary digit and then perform OR operation bit by bit. Then it returns the decimal value of the result.
+
+* Bitwise XOR(^):
+  Bitwise ^ operator peforms binary XOR operation bit by bit on the operands.
+  It converts the given input to binary digit and then perform XOR operation bit by bit.
+  It compares the both operands and returns 1 if both the operands are different and it returns 0 if both the operands are same.
+  Finally it returns the decimal value of the result.
+
+* Bitwise NOT operator:
+  Bitwise ~ operator performs binary NOT operation bit by bit on the operand.
+  It converts the given input to binary digit and then perform XOR operation bit by bit. 
+  It operator is used to invert all of the bits of the operand and returns the decimal value of the result.
+
+* Right Shift ( >> ) : 
+  The Right Shift operator shifts the bits of the left operand to right by number of times specified.
+  It moves the bits to the right, discards the far right bit, and assigns the leftmost bit a value of 0.
+  For better understanding the Right shift operator always decrease the value of the operand.
+  Example:
+	Let us shift the values one, two and three times to the right.
+	Considering a value 45.
+        The binary value of 45 is,
+
+        45	--------->	00101101
+
+	Now performing Right shift,
+
+	45 >> 1 ----->	00010110 = 22
+	45 >> 2 ----->	00001011 = 11
+
+* Left Shift ( << ) : 
+  The Left Shift operator shifts the bits of the left operand to left by number of times specified.
+  It moves the bits to the left, discards the far left bit, and assigns the rightmost bit a value of 0.
+  The Left shift operator will always increase the value of the operand.
+
+  Example:
+
+	Let us shift the values one, two and three times to the left.
+	Considering same 45.
+	And the binary value of 45 is 00101101 as we already know,
+
+	45	--------->	00101101
+
+	Now performing Right shift,
+
+	45 << 1 ----->	01011010 = 90
+	45 << 2 ----->	10110100 = 180
+	45 << 3 ----->	01101000 = 360
+----------------------------------------------------------------------------------------------------------------------------------------
+These operators are used to test a particular property of a file.
+* -b operator:
+  This operator check whether a file is a block special file or not. It returns true if it is a block special file otherwise false.
+
+* -c operator:
+  This operator check whether a file is a character special file or not. It returns true if it is a character special file otherwise false.
+
+* -d operator:
+  This operator check if the given directory exists or not. if it exists then operator returns true otherwise false.
+
+* -e operator:
+  This operator check whether the given file exists or not. If it exits this operator returns true otherwise false.
+
+* -r operator:
+  This operator checks whether the given file has read access or not. If it has read access then it returns true otherwise false.
+
+* -w operator: 
+  This operator check whether the given file has write access or not. If it has write then it returns true otherwise false.
+
+* -x operator:
+   This operator check whether the given file has execute access or not. If it has execute access then it returns true otherwise false.
+
+* -s operator: 
+  This operator checks the size of the given file. If the size of given file is greater than 0 then it returns true otherwise it is false.
+
+
+
