@@ -1,0 +1,23 @@
+Array Variables in Shell:
+------------------------
+An array is a structured arrangement of similar data elements.
+Within shell scripting, an array is a variable that holds multiple values, whethet they are of the same type or different types.
+It’s important to note that in shell scripting, everything is treated as a string.
+Arrays adhere to a zero-based index, which signifies that indexing initiates from 0
+
+If you are using the bash shell, here is the syntax of array initialization −
+array_name=(value1 ... valuen) 
+
+Accessing Array Values
+After you have set any array variable, you access it as follows 
+${array_name[index]} 
+
+
+Print all array indexes :
+$ echo ${!array[@]}
+${arr[@]}: This syntax is used to print each element of the array separately. It displays all elements in the array.
+${arr[*]}: Similar to the previous line, this syntax prints all elements of the array as a single string.
+
+
+Remove elements from an array with id 3
+$ Unset array[3]
