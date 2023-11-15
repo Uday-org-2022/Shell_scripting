@@ -1,0 +1,81 @@
+Loop statements in shell scripting:
+-----------------------------------
+There are 3 looping statements thatcan be used in shell scripting.
+1.While statement
+2.for statement
+3.until statement
+
+To alter the flow of statements, two commands are used they are:
+1.break
+2.continue
+
+Their descriptions and syntax are as follows:
+
+While statement:
+---------------
+Here the command is evaluated and based on the resulting loop will execute.
+if the command is raise to false then the loop will be terminated that.
+
+syntax:
+while <condition>
+do
+	<command1>
+	<command2>
+done
+
+
+Untill statement:
+----------------
+The until loop is executed as many times as the condition/command evaluates too false. 
+The loop terminates when the condition/command becomes true. 
+
+syntax:
+until <condition>
+do
+        <command1>
+        <command2>
+done
+
+For loops:
+----------
+The for loop operates on list items. It repeats a set of commands for every item in the list.
+Here var is the name of a variable and word1 to wordN are sequences of characters separated by spaces (words). 
+Each time the for loop executes, the value of the variable var is set to the next word in the list of words, word1 to wordN. 
+
+Syntax:  
+
+for <var> in <value1 value2 ... valuen>
+do
+    <command 1>
+    <command 2>
+    <etc>
+done
+
+select Loops:
+------------
+The select loop syntax is a bit similar to the for loop syntax. 
+In the for loop, every element will be iterated and for each element, you will write the logic to process it. 
+But select loop will automatically convert the list of elements into the numbered menu.
+
+syntax:
+
+select <var> in <value1 value2 ... valuen>
+do
+    <command 1>
+    <command 2>
+    <etc>
+done
+
+How to use the bash sleep in bash command
+-----------------------------------------
+Sleep  is a very versatile command with a very simple syntax.
+It is as easy as typing sleep N. This will pause your script for N seconds, with N being either a positive integer or a floating point number.
+# sleep 2
+
+
+break:
+The break statement is used to terminate the loop and can be used within a while, until, for and select loops.
+
+Continue:
+Continue is a command which is used to skip the remaining inside the loop for the current iteration in for, while, and until loop. 
+
