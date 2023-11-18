@@ -1,0 +1,73 @@
+Functions:
+---------
+A Function can be defined as a set of commands which can be called several times within the script.
+The purpose of a function is to help you make over scripts more readable and avoid writing the same code again and again.
+
+Format:
+
+function_name () { 
+   list of commands
+}
+
+or
+
+function function_name () { 
+   list of commands
+}
+
+Functions with Passing Arguments:
+--------------------------------
+We can add arguments or parameters to a function and pass data using it to the function so that the function can act with those data.
+n bash scripting, we can use the following syntax for writing a function with passing arguments.
+
+Syntax of Functions with Passing Arguments:
+
+#for defining
+function_name(){
+    .....
+    
+    parameter_1 = $1
+    parameter_2 = $2
+    .
+    .
+    .
+    parameter_n = $n
+    
+    ....
+    commands
+    .....
+}
+
+#for calling
+function_name p1 p2 ....pn
+We can directly pass the arguments while calling the function and can access them with $1, $2 ….. $n within the function. 
+Let’s see an example for more clear understanding of it.
+
+Variable scope:
+---------------
+When you create a variable inside the function or outside the function, it can be accessed globally.
+By default, variables are created in the global scope.
+This means that a variable created inside the function can be accessible globally.
+To make variables local to the function you can use the"local" keyword.
+The local keyword will restrict the variable scope from global to local.
+
+
+Return Values:
+-------------
+Most other programming languages have the concept of a return value for functions. 
+Bash functions don’t allow us to do this. However bash functions allow us to set a return status. 
+The return status can be specified by using the return keyword, and it is assigned to the variable $?.
+The return statement terminates the function.
+
+
+Example:
+
+#!/bin/bash
+print_something () {
+    echo Hello $1
+    return 77
+}
+print_something Okan
+echo return value $
+
+
