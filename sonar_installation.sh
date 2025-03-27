@@ -103,5 +103,3 @@ else
 fi
 
 echo "SonarQube installation completed successfully!"
-echo "Access SonarQube at: http://your-server-ip:9000"
-echo "Default login - Username: admin, Password: admin"
