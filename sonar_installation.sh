@@ -62,22 +62,22 @@ if [ -f "$SERVICE_FILE" ]; then
     echo "SonarQube service already exists. Skipping configuration."
 else
     cat <<EOF | sudo tee $SERVICE_FILE
-[Unit]
-Description=SonarQube service
-After=network.target
+    [Unit]
+    Description=SonarQube service
+    After=network.target
 
-[Service]
-Type=forking
-User=sonar
-Group=sonar
-ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
-ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
-Restart=always
-LimitNOFILE=65536
+    [Service]
+    Type=forking
+    User=sonar
+    Group=sonar
+    ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+    ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+    Restart=always
+    LimitNOFILE=65536
 
-[Install]
-WantedBy=multi-user.target
-EOF
+    [Install]
+    WantedBy=multi-user.target
+    EOF
     echo "SonarQube service configuration completed."
 fi
 
