@@ -1,11 +1,12 @@
 #!/bin/bash
 
-set -e  # Exit immediately if any command fails
+# Exit immediately if a command exits with a non-zero status
+set -e
 
-echo "Starting SonarQube installation on Ubuntu.
+echo "Starting SonarQube installation on Ubuntu..."
 
 # Check if the script is run as root
-if[ $(id -u) -ne 0 ]; then
+if [ "$(id -u)" -ne 0 ]; then
     echo "Error: Please run this script as root or using sudo!"
     exit 1
 fi
@@ -18,7 +19,7 @@ if java -version 2>&1 | grep -q "17"; then
     echo "Java 17 is already installed."
 else
     echo "Installing OpenJDK 17..."
-    sudo apt install -y openjdk-17-jdk
+    sudo apt install openjdk-17-jdk -y
 fi
 
 # Verify Java installation
@@ -46,6 +47,7 @@ if [ -d "$SONARQUBE_DIR" ]; then
     echo "SonarQube directory already exists. Skipping download."
 else
     sudo wget -O /opt/sonarqube.zip "$SONARQUBE_URL"
+    echo "Extracting SonarQube..."
     sudo apt install unzip -y
     sudo unzip /opt/sonarqube.zip -d /opt/
     sudo mv /opt/sonarqube-${SONAR_VERSION} $SONARQUBE_DIR
@@ -103,3 +105,5 @@ else
 fi
 
 echo "SonarQube installation completed successfully!"
+echo "Access SonarQube at: http://your-server-ip:9000"
+echo "Default login - Username: admin, Password: admin"
