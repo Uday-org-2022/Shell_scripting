@@ -4,15 +4,19 @@
 echo "Updating the package list...."
 sudo apt-get update -y
 
-# installing required dependencies before installing jenkins
+# Define function to check if a package is installed
+is_package_installed() {
+    dpkg -l | grep -q "^ii  $1 "
+}
 
-dependencies = ("openjdk-17-jre" "wget" "gnupg" "fontconfig")
+# installing required dependencies before installing jenkins
+dependencies=("openjdk-17-jre" "wget" "gnupg" "fontconfig")
 for package in "${dependencies[@]}"; do
-    if ! dpkg -1 | grep -q "${package}"; then
+    if ! is_package_installed "$package"; then
         echo "Installing $package ..."
         sudo apt install -y "$package"
     else 
-        echo "$package ia already installed. skipping......"
+        echo "$package is already installed. Skipping..."
     fi 
 done
 
@@ -29,9 +33,8 @@ fi
 
 # Add Jenkins repository to the system
 echo "Adding Jenkins repository..."
-echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
-  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
-  /etc/apt/sources.list.d/jenkins.list > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" \
+  | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
 if [ $? -eq 0 ]; then
     echo "Jenkins repository added successfully."
 else
@@ -45,9 +48,9 @@ sudo apt-get update -y
 
 # Install Jenkins
 if is_package_installed "jenkins"; then
-    echo "Jenkins is already installed"
+    echo "Jenkins is already installed."
 else
-    echo "Installing the jenkins software....."
+    echo "Installing the Jenkins software..."
     sudo apt install -y jenkins
 fi
 
@@ -75,4 +78,3 @@ fi
 echo "Jenkins installation complete!"
 echo "Initial admin password:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-
