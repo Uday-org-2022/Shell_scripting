@@ -1,0 +1,17 @@
+aws-modular-scripts/
+├── env/
+│   ├── dev.env
+│   └── test.env
+├── state/
+│   ├── infra-ids-dev.env
+│   └── infra-ids-test.env
+├── scripts/
+│   ├── create-vpc.sh
+│   ├── create-subnets.sh
+│   ├── create-igw.sh
+│   ├── create-natgw.sh
+│   ├── create-security-group.sh
+│   ├── create-keypair.sh
+│   └── create-ec2.sh
+└── run-all.sh
+
